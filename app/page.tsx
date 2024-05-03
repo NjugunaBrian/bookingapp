@@ -12,7 +12,7 @@ export default function Home() {
       <section className="m-4 mt-0 -mb-14 px-2 lg:px-4">
         <Searchform />
       </section>
-      <section className="mx-auto lg:mx-10 max-w-7xl mt-10 p-6 bg-white rounded-t-lg">
+      <section className="mx-auto lg:mx-10 max-w-7xl mt-10 p-6 bg-white rounded-t">
         <div className="pt-5">
           <h3 className="text-xl font-bold">Trending Destinations
           </h3>
@@ -22,7 +22,7 @@ export default function Home() {
         <div className="flex space-x-4 py-5 overflow-x-scroll">
           {trending_data.map((item) => (
             <div key={item.id} className="space-y-1 shrink-0 cursor-pointer">
-              <img key={item.id} src={item.src}  className="w-80 h-72 object-cover rounded-lg pb-2" alt="" />
+              <img key={item.id} src={item.src}  className="w-80 h-72 object-cover rounded pb-2" alt="" />
               <p className="font-bold">{item.title}</p>
               <p>{item.location}</p>
               <p className="font-light text-sm">{item.description}</p>

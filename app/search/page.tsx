@@ -62,8 +62,8 @@ async function Searchpage({ searchParams } : Props) {
                   </div>
 
                   <div className="text-right">
-                    <p className="text-xs">{item.booking_metadata}</p>
-                    <p className="font-bold text-2xl">{item.price}</p>
+                    <p className="text-xs ">{item.booking_metadata}</p>
+                    <p className="text-2xl font-bold">{item.price}</p>
                   </div>
                   
                 </div>

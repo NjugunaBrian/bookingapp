@@ -81,7 +81,7 @@ function Searchform() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col lg:flex-row items-center justify-center lg:max-w-4xl lg:mx-auto space-x-0 lg:space-x-2 space-y-4 lg:space-y-0 rounded-lg">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col lg:flex-row items-center justify-center lg:max-w-4xl lg:mx-auto space-x-0 lg:space-x-2 space-y-4 lg:space-y-0 rounded">
                 <div className="grid w-full lg:max-w-xs items-center gap-1.5">
                     <FormField
                         control={form.control}
@@ -96,7 +96,7 @@ function Searchform() {
                                 <FormMessage />
 
                                 <FormControl>
-                                    <input placeholder="London, UK..." {...field} className="outline-[1px] px-4 py-2 rounded-lg w-full lg:max-w-xs" />
+                                    <input placeholder="London, UK..." {...field} className="outline-[1px] px-4 py-2 rounded w-full lg:max-w-xs" />
                                 </FormControl>
 
                             </FormItem>
@@ -119,7 +119,7 @@ function Searchform() {
                                     <PopoverTrigger asChild>
                                         <FormControl>
                                             <Button id="dates" name="dates" variant={"outline"}
-                                                className={cn("w-full justify-start text-left font-normal", !field.value.from && "text-muted-foreground")}
+                                                className={cn("w-full justify-start text-left font-normal bg-white hover:bg-gray-100 rounded", !field.value.from && "text-muted-foreground")}
                                             >
                                                 <CalendarIcon className="h-4 w-4 mr-3 opacity-50" />
                                                 {field.value?.from ? (
@@ -141,7 +141,7 @@ function Searchform() {
                                         </FormControl>
 
                                     </PopoverTrigger>
-                                    <PopoverContent>
+                                    <PopoverContent className="bg-white">
                                         <Calendar
                                             initialFocus
                                             mode="range"
@@ -172,7 +172,7 @@ function Searchform() {
                                 <FormLabel className="text-white">Adults</FormLabel>
                                 <FormMessage />
                                 <FormControl>
-                                    <Input type="number" placeholder="Adults" {...field} />
+                                    <Input type="number" placeholder="Adults" {...field} className="bg-white hover:bg-gray-100 rounded" />
                                 </FormControl>
                                 
                             </FormItem>
@@ -189,7 +189,7 @@ function Searchform() {
                                 <FormLabel className="text-white">Children</FormLabel>
                                 <FormMessage />
                                 <FormControl>
-                                    <Input type="number" placeholder="Children" {...field} />
+                                    <Input type="number" placeholder="Children" {...field} className="bg-white hover:bg-gray-100 rounded" />
                                 </FormControl>
                                 
                             </FormItem>
@@ -206,7 +206,7 @@ function Searchform() {
                                 <FormLabel className="text-white">Rooms</FormLabel>
                                 <FormMessage />
                                 <FormControl>
-                                    <Input type="number" placeholder="Rooms" {...field} />
+                                    <Input type="number" placeholder="Rooms" {...field} className="bg-white hover:bg-gray-100 rounded" />
                                 </FormControl>
                                 
                             </FormItem>
@@ -216,7 +216,7 @@ function Searchform() {
                     </div>
 
                     <div className="mt-auto">
-                        <Button type="submit" className="bg-blue-800 text-base">
+                        <Button type="submit" className="bg-blue-800 hover:bg-blue-700 text-white  text-base rounded">
                             Search
                         </Button>
                     </div>
