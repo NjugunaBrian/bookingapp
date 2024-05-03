@@ -28,8 +28,8 @@ export async function fetchResults(searchParams: SearchParams) {
       listings: {
         _fns: [
           {
-            _fn: "xpath_one",
-            _args: ["//div[@data=testid='property-card-container']"],
+            _fn: "xpath",
+            _args: ["//div[@data-testid='property-card-container']"],
           },
         ],
         _items: {
@@ -37,7 +37,7 @@ export async function fetchResults(searchParams: SearchParams) {
             _fns: [
               {
                 _fn: "xpath_one",
-                _args: [".//div[@data=testid='title']/text()"],
+                _args: [".//div[@data-testid='title']/text()"],
               },
             ],
           },
@@ -56,7 +56,7 @@ export async function fetchResults(searchParams: SearchParams) {
               {
                 _fn: "xpath_one",
                 _args: [
-                  ".//div[contains(@class, 'c5ca594cb1 f19ed67e4b')]/div[contains(@class 'abf093bdfe f45d8e4c32')]/text()",
+                  ".//div[contains(@class, 'c5ca594cb1 f19ed67e4b')]/div[contains(@class, 'abf093bdfe f45d8e4c32')]/text()",
                 ],
               },
             ],
@@ -65,7 +65,7 @@ export async function fetchResults(searchParams: SearchParams) {
             _fns: [
               {
                 _fn: "xpath_one",
-                _args: [".//a[contains(@class, 'a78ca197d0')]/href"],
+                _args: [".//a[contains(@class, 'a78ca197d0')]/@href"],
               },
             ],
           },
@@ -94,6 +94,14 @@ export async function fetchResults(searchParams: SearchParams) {
                 _args: [
                   ".//div[@class='a3b8729ab1 e6208ee469 cb2cbb3ccb']/text()",
                 ],
+              },
+            ],
+          },
+          rating: {
+            _fns: [
+              {
+                _fn: "xpath_one",
+                _args: [".//div[@class='a3b8729ab1 d86cee9b25']/text()"],
               },
             ],
           },
@@ -130,7 +138,7 @@ export async function fetchResults(searchParams: SearchParams) {
         "Content-type": "application/json",
         Authorization: "Basic " + Buffer.from(`${username}:${password}`).toString("base64"),
     },
-  }).then(response => response.json())
+  }).then((response) => response.json())
   .then((data) => {
     if (data.results.length === 0) return;
     const result: Result = data.results[0];
