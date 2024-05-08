@@ -96,7 +96,7 @@ function Searchform() {
                                 <FormMessage />
 
                                 <FormControl>
-                                    <input placeholder="London, UK..." {...field} className="outline-[1px] px-4 py-2 rounded w-full lg:max-w-xs" />
+                                    <input placeholder="London, UK..." {...field} className="px-4 py-2 w-full bg-white hover:bg-gray-100 rounded lg:max-w-xs outline outline-1" />
                                 </FormControl>
 
                             </FormItem>

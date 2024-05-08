@@ -46,7 +46,7 @@ export async function fetchResults(searchParams: SearchParams) {
               {
                 _fn: "xpath_one",
                 _args: [
-                  `.//h4[contains(@class, 'abf093bdfe e8f7c070a7')]/text()`,
+                  ".//h4[contains(@class, 'abf093bdfe e8f7c070a7')]/text()",
                 ],
               },
             ],
@@ -56,7 +56,7 @@ export async function fetchResults(searchParams: SearchParams) {
               {
                 _fn: "xpath_one",
                 _args: [
-                  `.//div[contains(@class, 'c5ca594cb1 f19ed67e4b')]/div[contains(@class, 'abf093bdfe f45d8e4c32')]/text()`,
+                  ".//div[contains(@class, 'c5ca594cb1 f19ed67e4b')]/div[contains(@class, 'abf093bdfe f45d8e4c32')]/text()",
                 ],
               },
             ],
@@ -74,7 +74,7 @@ export async function fetchResults(searchParams: SearchParams) {
               {
                 _fn: "xpath_one",
                 _args: [
-                  ".//span[contains(@class, 'f6431b446c fbfd7c1165 e84eb96b1f')]/text()",
+                  `.//span[contains(@class, 'f6431b446c fbfd7c1165 e84eb96b1f')]/text()`,
                 ],
               },
             ],
@@ -115,8 +115,8 @@ export async function fetchResults(searchParams: SearchParams) {
               },
             ],
           },
-        },
       },
+    },
       total_listings: {
         _fns: [
           {

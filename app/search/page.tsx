@@ -13,9 +13,8 @@ export type SearchParams  = {
     no_room: string,
     checkin: string,
     checkout: string
+    
 }
-
-
 
 async function Searchpage({ searchParams } : Props) {
     if (!searchParams.url) return notFound();
